@@ -8,14 +8,14 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
     return (
-      <NavigationContainer>
-        <View style={styles.appContainer}>
-            <View style={{ alignItems: 'stretch', padding: 10 }}>
+        <NavigationContainer>
+            <View style={styles.appContainer}>
+                {/* <View style={{ alignItems: 'stretch', padding: 10 }}>
                 <YHealthTopBar />
             </View>
-            <CalendarComponent />
-            <TabNavigation />
-        </View>
+            <CalendarComponent /> */}
+                <TabNavigation />
+            </View>
         </NavigationContainer>
     );
 };

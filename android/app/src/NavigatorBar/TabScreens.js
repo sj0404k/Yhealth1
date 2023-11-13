@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { View } from 'react-native';
+import CalendarComponent from '../mycalendar/CalendarComponent';
 
 const Container = styled.View`
     flex: 1;
@@ -20,9 +22,7 @@ export const Exercise = () => {
 
 export const Calendar = () => {
     return (
-        <Container>
-            <StyledText>Calendar</StyledText>
-        </Container>
+        <View><CalendarComponent /></View>
     );
 };
 

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { Calendar } from 'react-native-calendars';
+import YHealthTopBar from '../NavigatorBar/topbar';
 
 const CalendarComponent = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -11,15 +12,16 @@ const CalendarComponent = () => {
     setSelectedDate(day.dateString);
   };
   const renderHeader = (date) => {
-    const month = date.toString('MMMM'); 
+    const month = date.toString('MMMM');
     return (
       <View style={{ padding: 10 }}>
-        <Text style={{fontSize: 25}}>{month}</Text>
+        <Text style={{ fontSize: 25 }}>{month}</Text>
       </View>
     );
   };
   return (
     <View>
+      <YHealthTopBar />
       <Calendar
         onDayPress={handleDayPress}
         markedDates={{
