@@ -6,7 +6,7 @@ const YHealthTopBar = () => {
   return (
     <View style={styles.topBarContainer}>
       <Text style={styles.title}>
-        <Text style={{ color: 'blue' }}>Y</Text>Health</Text>
+        <Text style={{ color: 'blue' }}> Y</Text>Health</Text>
     </View>
   );
 }

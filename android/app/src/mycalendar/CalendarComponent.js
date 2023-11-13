@@ -1,9 +1,11 @@
 // CalendarComponent.js
 
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import YHealthTopBar from '../NavigatorBar/topbar';
+import ExerciseGraph from './ExerciseGraph';
+import ExerciseRecord from './ExerciseRecord';
 
 const CalendarComponent = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -19,20 +21,28 @@ const CalendarComponent = () => {
       </View>
     );
   };
+
   return (
-    <View>
-      <YHealthTopBar />
-      <Calendar
-        onDayPress={handleDayPress}
-        markedDates={{
-          [selectedDate]: { selected: true, selectedColor: 'blue' },
-        }}
-        renderHeader={renderHeader}
-      />
-      <View style={{ marginTop: 20 }}>
-        <Text>Selected Date: {selectedDate}</Text>
+    <ScrollView>
+      <View style={{ backgroundColor: '#eeeeee', }}>
+        <YHealthTopBar />
+        <View style={{ padding: 2 }}>
+          <Calendar
+            onDayPress={handleDayPress}
+            markedDates={{
+              [selectedDate]: { selected: true, selectedColor: 'blue' },
+            }}
+            renderHeader={renderHeader}
+            style={{ borderRadius: 30, padding: 12 }}
+          /></View>
+        <View style={{ padding: 3 }}>
+          <ExerciseGraph />
+        </View>
+        <View style={{ padding: 3 }}>
+          <ExerciseRecord />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
